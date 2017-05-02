@@ -33,10 +33,7 @@ public class Main
         for (int i = 0; i < n; i++)
         {
             t = String.valueOf(in.nextInt());
-            if (seqMap.containsKey(t))
-            {
-                seqMap.put(t, new Node(i,seqMap.get(t).getCount() + 1));
-            }
+            if (seqMap.containsKey(t)) seqMap.put(t, new Node(i, seqMap.get(t).getCount() + 1));
             else
             {
                 seqMap.put(t, new Node(i,1));
