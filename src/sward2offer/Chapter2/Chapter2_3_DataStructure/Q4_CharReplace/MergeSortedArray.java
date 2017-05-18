@@ -1,6 +1,4 @@
-package sward2offer.Q4_CharReplace;
-
-import java.util.Arrays;
+package sward2offer.Chapter2.Chapter2_3_DataStructure.Q4_CharReplace;
 
 /**
  * @author NikoBelic

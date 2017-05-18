@@ -1,4 +1,4 @@
-package sward2offer.model;
+package sward2offer.Chapter2.Chapter2_3_DataStructure.model;
 
 /**
  * 二叉树结构

@@ -1,4 +1,4 @@
-package sward2offer.Q7_QueueByStack;
+package sward2offer.Chapter2.Chapter2_3_DataStructure.Q7_QueueByStack;
 
 import java.util.Stack;
 

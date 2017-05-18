@@ -1,4 +1,4 @@
-package sward2offer.Q4_CharReplace;
+package sward2offer.Chapter2.Chapter2_3_DataStructure.Q4_CharReplace;
 
 /**
  * @author NikoBelic

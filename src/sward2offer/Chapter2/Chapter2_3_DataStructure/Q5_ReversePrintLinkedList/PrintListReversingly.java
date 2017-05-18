@@ -1,6 +1,6 @@
-package sward2offer.Q5_ReversePrintLinkedList;
+package sward2offer.Chapter2.Chapter2_3_DataStructure.Q5_ReversePrintLinkedList;
 
-import sward2offer.model.SimpleLinkedList;
+import sward2offer.Chapter2.Chapter2_3_DataStructure.model.SimpleLinkedList;
 
 import java.util.Deque;
 import java.util.concurrent.LinkedBlockingDeque;

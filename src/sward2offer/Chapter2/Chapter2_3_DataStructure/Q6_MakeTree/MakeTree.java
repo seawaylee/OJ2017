@@ -1,9 +1,8 @@
-package sward2offer.Q6_MakeTree;
+package sward2offer.Chapter2.Chapter2_3_DataStructure.Q6_MakeTree;
 
-import sward2offer.model.TreeNode;
+import sward2offer.Chapter2.Chapter2_3_DataStructure.model.TreeNode;
 
 import java.util.*;
-import java.util.concurrent.LinkedBlockingQueue;
 
 /**
  * @author NikoBelic

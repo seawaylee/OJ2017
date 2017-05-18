@@ -1,7 +1,4 @@
-package sward2offer.Q2_Singleton;
-
-import java.util.ArrayList;
-import java.util.List;
+package sward2offer.Chapter2.Chapter2_3_DataStructure.Q2_Singleton;
 
 /**
  * @author NikoBelic

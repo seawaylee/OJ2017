@@ -1,7 +1,4 @@
-package sward2offer.Q3_Array_Search;
-
-import java.util.Arrays;
-import java.util.Random;
+package sward2offer.Chapter2.Chapter2_3_DataStructure.Q3_Array_Search;
 
 /**
  * @author NikoBelic
