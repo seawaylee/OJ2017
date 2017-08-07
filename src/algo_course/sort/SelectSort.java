@@ -1,44 +1,42 @@
 package algo_course.sort;
 
 /**
- * 简单选择排序
- * 思路:每次循环都将无序数组的第一个元素和无序数组中的最小元素互换位置
  * @author NikoBelic
- * @create 17/01/2017 13:29
+ * @create 2017/8/1 23:17
  */
 public class SelectSort
 {
-    public static int[] sort(int[] array)
+    public static int[] selectionSort(int[] A, int n)
     {
-        int index;
-        int min;
-        for (int i = 0; i < array.length; i++)
+        int t, min, min_index, compareCount = 0;
+        for (int i = 0; i < n; i++)
         {
-            index = i;
-            min = array[i];
-            // 找到最小值
-            for (int j = i; j < array.length; j++)
+            min_index = i;
+            min = A[i];
+            for (int j = i; j < n; j++)
             {
-                if (array[j] < min)
+                compareCount++;
+                if (A[j] < min)
                 {
-                    min = array[j];
-                    index = j;
+                    min = A[j];
+                    min_index = j;
                 }
             }
-            int t = array[i];
-            array[i] = array[index];
-            array[index] = t;
+            t = A[i];
+            A[i] = A[min_index];
+            A[min_index] = t;
         }
-        return array;
+        System.out.println("compareCount=" + compareCount);
+        return A;
     }
+
     public static void main(String[] args)
     {
-        int[] arrays = new int[]{9, 8, 7, 6, 5, 22, 3, 2, 1, 10};
-        arrays = sort(arrays);
-        arrays = sort(arrays);
-        for (int i = 0; i < arrays.length; i++)
+        int[] A = {6, 3, 4, 2, 1, 5, 7, 9, 8};
+        A = selectionSort(A, A.length);
+        for (int i : A)
         {
-            System.out.print(arrays[i] + " ");
+            System.out.print(i + " ");
         }
     }
 }

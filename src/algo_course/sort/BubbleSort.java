@@ -1,43 +1,49 @@
 package algo_course.sort;
 
+import sun.jvm.hotspot.tools.SysPropsDumper;
+
 /**
  * 优化版冒泡排序
- * 思路:每次冒泡都会将无序部分最大的数移动到无序部分的最后一个位置
+ *
  * @author NikoBelic
- * @create 16/01/2017 17:54
+ * @create 2017/8/1 22:39
  */
 public class BubbleSort
 {
-    public static int[] sort(int[] array)
+    public int[] bubbleSort2(int[] A, int n)
     {
+        int t;
         boolean swap = false;
-        for (int i = 0; i < array.length - 1; i++)
+        int compareCount = 0;
+        for (int i = 0; i < n - 1; i++)
         {
             swap = false;
-            for (int j = 0; j < array.length - i - 1; j++)
+            for (int j = 0; j < n - i - 1; j++)
             {
-                if (array[j] > array[j + 1])
+                if (A[j] > A[j + 1])
                 {
-                    int t = array[j];
-                    array[j] = array[j + 1];
-                    array[j + 1] = t;
-                    swap = true; // 如果某一轮冒泡发现没有任何位置的交换,那么说明这个数组已经是有序的,无需再进行下一轮冒泡
+                    t = A[j];
+                    A[j] = A[j + 1];
+                    A[j + 1] = t;
+                    swap = true;
                 }
+                compareCount++;
             }
-            if (!swap)
+            if (!swap) // 如果比较期间没有发生交换，那么说明该数组已经有序
                 break;
         }
-        return array;
+        System.out.println("compareCount=" + compareCount);
+        return A;
     }
 
     public static void main(String[] args)
     {
-        int[] arrays = new int[]{9, 8, 7, 6, 5, 22, 3, 2, 1, 10};
-        //arrays = sort(arrays);
-        arrays = sort(arrays);
-        for (int i = 0; i < arrays.length; i++)
+        int[] A = {6, 3, 4, 2, 1, 5, 7, 9, 8};
+        BubbleSort s = new BubbleSort();
+        A = s.bubbleSort2(A, A.length);
+        for (int i : A)
         {
-            System.out.print(arrays[i] + " ");
+            System.out.print(i + " ");
         }
     }
 }
