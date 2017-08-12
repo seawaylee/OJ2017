@@ -13,86 +13,39 @@ import java.util.*;
  输出描述:
  输出消除重复元素之后的序列，以空格分隔，行末无空格
 
- 输入例子:
+ 输入例子1:
  9
  100 100 100 99 99 99 100 100 100
 
- 输出例子:
+ 输出例子1:
  99 100
  * @author NikoBelic
- * @create 2017/4/17 18:07
+ * @create 2017/8/12 01:52
  */
 public class Main
 {
-    public void soltion()
-    {
-        Scanner in = new Scanner(System.in);
-        int n = in.nextInt();
-        String t;
-        Map<String, Node> seqMap = new HashMap<>();
-        for (int i = 0; i < n; i++)
-        {
-            t = String.valueOf(in.nextInt());
-            if (seqMap.containsKey(t)) seqMap.put(t, new Node(i, seqMap.get(t).getCount() + 1));
-            else
-            {
-                seqMap.put(t, new Node(i,1));
-            }
-        }
-
-        Node[] nodes = (Node[]) seqMap.values().toArray();
-        for (Node node : nodes)
-        {
-            System.out.println(node);
-        }
-
-    }
     public static void main(String[] args)
     {
-        new Main().soltion();
-    }
-}
-
-class Node implements Comparator<Node>
-{
-    int index;
-    int count;
-
-    public Node(int index, int count)
-    {
-        this.index = index;
-        this.count = count;
-    }
-
-    public int getIndex()
-    {
-        return index;
-    }
-
-    public void setIndex(int index)
-    {
-        this.index = index;
-    }
-
-    public int getCount()
-    {
-        return count;
-    }
-
-    public void setCount(int count)
-    {
-        this.count = count;
-    }
-
-    @Override
-    public int compare(Node o1, Node o2)
-    {
-        return o1.getCount() - o2.getCount();
-    }
-
-    @Override
-    public String toString()
-    {
-        return "Node{" + "index=" + index + ", count=" + count + '}';
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        Map<Integer, Integer> numMap = new HashMap<>();
+        for (int i = 0; i < n; i++)
+        {
+            numMap.put(sc.nextInt(), i);
+        }
+        Map<Integer, Integer> reversedMap = new HashMap<>();
+        for (Map.Entry<Integer, Integer> entry: numMap.entrySet())
+        {
+            reversedMap.put(entry.getValue(), entry.getKey());
+        }
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < n; i++)
+        {
+            if (reversedMap.containsKey(i))
+            {
+                sb.append(reversedMap.get(i)).append(" ");
+            }
+        }
+        System.out.println(sb.substring(0,sb.length() - 1).toString());
     }
 }

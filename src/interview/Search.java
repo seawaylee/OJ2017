@@ -77,7 +77,7 @@ public class Search
             array[i] = new Random().nextInt(100);
         }
         array[20] = 7;
-        //sort(array);
+        //c2_sort(array);
         Arrays.sort(array);
         for (Integer integer : array)
         {
